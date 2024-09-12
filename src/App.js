@@ -9,7 +9,6 @@ const App = () => {
   return (
     <Container maxWidth="sm">
       <Box sx={{ textAlign: 'center', padding: '20px' }}>
-        <h1>Resume Skill Analyzer</h1>
         {!resumeData ? (
           <ResumeUpload setResumeData={setResumeData} />
         ) : (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
 import { Progress } from "./components/ui/progress"
+import config from './config';
 
 const ResumeSkillDashboard = () => {
   const [file, setFile] = useState(null);
@@ -22,7 +23,7 @@ const ResumeSkillDashboard = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/v1/resume/generate-skill-rating-from-pdf", {
+      const response = await fetch(`${config.backendUrl}/v1/resume/generate-skill-rating-from-pdf`, {
         method: 'POST',
         body: formData,
       });
